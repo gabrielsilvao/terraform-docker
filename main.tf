@@ -15,9 +15,19 @@ resource "docker_image" "web" {
 
 resource "docker_container" "web" {
   image = docker_image.web.latest
-  name  = "tutorial"
+  name  = "container_1"
   ports {
     internal = 80
     external = 80
   }
+
+resource "docker_container" "web" {
+  image = docker_image.web.latest
+  name = "container_2"
+  ports {
+    internal = 80
+    external = 81
+  }
+}
+
 }
