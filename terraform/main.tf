@@ -13,9 +13,9 @@ resource "docker_image" "web" {
   keep_locally = false
 }
 
-resource "docker_container" "container-1" {
+resource "docker_container" "container-feliz" {
   image = docker_image.web.latest
-  name  = "container-1"
+  name  = "container-feliz"
   ports {
     internal = 80
     external = 80
